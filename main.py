@@ -286,4 +286,4 @@ snakeList = []
 next_turn(snake, food, p) 
 window.mainloop() 
   
-# This code is contributed by genius_general 
+print('Hii')
