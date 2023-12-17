@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter.ttk import Button
 
-root = False
 def window2(root):
     def window1():
         print("hi")
@@ -15,4 +14,3 @@ def window2(root):
     a.pack()
     root.mainloop()
     return 3
-print(window2(Tk()))

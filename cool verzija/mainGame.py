@@ -1,9 +1,7 @@
 from tkinter import *
 import random
-
-#other games
 from hi import window2
-
+from swfws import Swfws
 root = Tk()
 class snakeGame:
     def __init__(self, root, sI):
@@ -79,9 +77,9 @@ class snakeGame:
                     canvas.delete("portal")
                     portalEx = False
                     if p.trans:
-                        newWindow = window2(self.root)
+                        newWindow = Swfws(self.root)
                         direction = 'down'
-                        a = snakeGame(Tk(), newWindow)
+                        a = snakeGame(Tk(), newWindow.sI)
                 if x == p.x1 and y == p.y1:
                     if direction == "up": 
                         y = p.y2 - SPACE_SIZE
@@ -187,6 +185,6 @@ class snakeGame:
         self.root.mainloop() 
 portalEx = False
 score = 0
-direction = 'down'
+direction = 'down' 
 p = 0
 a = snakeGame(root, 0)
