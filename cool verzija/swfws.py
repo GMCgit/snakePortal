@@ -48,7 +48,7 @@ class Swfws:
                 a = Label(root, bg=["#E1EFCA", "#ECCAFF", "#A99ABD", "#E5D0E3", "#E0E3F4", "#C0D8C0"][randint(0, 5)], text = s[i], height=3, width = int(WIDTH/(6*len(s)))-7+len(s), border = 2)
                 a.place(x = WIDTH/len(s)*i, y = 100)
                 stats["words"].append(a)
-            if stats["level"] < 1:
+            if stats["level"] < len(recenice)-1:
                 swFact2 = recenice[stats["level"]+MIN_LENGHT+1][randint(0, len(recenice[stats["level"]+MIN_LENGHT+1])-1)]
                 s = swFact2[0].split()
                 for i in range(len(s)):
