@@ -63,12 +63,15 @@ class Swfws:
             else:
                 if stats["pos"] == stats["cor"]:
                     stats["level"]+=1
+                    self.sI += 1
                     if stats["level"] > len(recenice)-1:
                         root.destroy()
                     for i in stats["words"]:
                         i.destroy()
                     stats["words"] = []
                     gameSetUp()
+                else:
+                    self.sI -= 1
             canvas.delete(stats["player"])
             stats["player"] = canvas.create_rectangle(WIDTH/6+WIDTH/3*stats["pos"]-15, 50, WIDTH/6+WIDTH/3*stats["pos"]+15, 100, fill=PLAYER)
         gameSetUp()
@@ -76,5 +79,4 @@ class Swfws:
         root.bind('<Right>', lambda event: move('right'))
         root.bind('<Down>', lambda event: move('down'))
         root.mainloop()
-        self.sI = 2
 #a = Swfws(Tk())

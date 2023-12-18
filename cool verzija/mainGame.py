@@ -157,6 +157,7 @@ class snakeGame:
             canvas.delete(ALL) 
             canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2, font=('consolas', 70), text="GAME OVER", fill="red", tag="gameover")        
         #init
+        
         self.root.title("Snake game") 
         label = Label(self.root, text="Points:{}".format(score), font=('consolas', 20)) 
         label.pack() 
@@ -179,6 +180,9 @@ class snakeGame:
         self.root.bind('<Up>', lambda event: change_direction('up')) 
         self.root.bind('<Down>', lambda event: change_direction('down')) 
 
+        if score+BODY_SIZE < 1:
+            game_over()
+        
         snake = Snake(direction)
         food = Food() 
         next_turn(snake, food, p) 
