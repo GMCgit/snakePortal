@@ -8,7 +8,7 @@ class Swfws:
     def mainLoop(self, root):
         root.destroy()
         root = Tk()
-
+        root.resizable(False, False)
         WIDTH = 500
         HEIGHT = 500
         SPEED = 200

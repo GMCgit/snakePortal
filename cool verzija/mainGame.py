@@ -2,6 +2,7 @@ from tkinter import *
 import random
 from hi import window2
 from swfws import Swfws
+from pingpong import pingPong
 root = Tk()
 class snakeGame:
     def __init__(self, root, sI):
@@ -77,7 +78,11 @@ class snakeGame:
                     canvas.delete("portal")
                     portalEx = False
                     if p.trans:
-                        newWindow = Swfws(self.root)
+                        newWindow = 0
+                        if random.randint(0, 100) < 50:
+                            newWindow = Swfws(self.root)
+                        else:
+                            newWindow = pingPong(self.root)
                         direction = 'down'
                         a = snakeGame(Tk(), newWindow.sI)
                 if x == p.x1 and y == p.y1:
@@ -161,7 +166,7 @@ class snakeGame:
         self.root.title("Snake game") 
         label = Label(self.root, text="Points:{}".format(score), font=('consolas', 20)) 
         label.pack() 
-
+        self.root.resizable(False, False)
         canvas = Canvas(self.root, bg=BACKGROUND, height=HEIGHT, width=WIDTH) 
         canvas.pack() 
         self.root.update() 
