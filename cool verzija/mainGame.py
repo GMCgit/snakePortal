@@ -3,6 +3,8 @@ import random
 from hi import window2
 from swfws import Swfws
 from pingpong import pingPong
+from kemijskiElementi import kemEl
+
 root = Tk()
 class snakeGame:
     def __init__(self, root, sI):
@@ -79,10 +81,13 @@ class snakeGame:
                     portalEx = False
                     if p.trans:
                         newWindow = 0
-                        if random.randint(0, 100) < 50:
+                        a = random.randint(0, 100)
+                        if a < 1:
+                            newWindow = pingPong(self.root)
+                        elif a<2:
                             newWindow = Swfws(self.root)
                         else:
-                            newWindow = pingPong(self.root)
+                            newWindow = kemEl(self.root)
                         direction = 'down'
                         a = snakeGame(Tk(), newWindow.sI)
                 if x == p.x1 and y == p.y1:

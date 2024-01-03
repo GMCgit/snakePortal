@@ -11,8 +11,6 @@ class Swfws:
         root.resizable(False, False)
         WIDTH = 500
         HEIGHT = 500
-        SPEED = 200
-        SPACE_SIZE = 20
         BACKGROUND = "#FFFFFF"
         MIN_LENGHT = 3
         PLAYER = "#FF0000"
@@ -31,7 +29,7 @@ class Swfws:
 
         recenice = {
             3: [("trokut je tijelo", 2)],
-            4: [("merkur je najtopliji planet", 0)],
+            4: [("merkur je najtopliji planet", 0)]
         }
         stats = {
             "level": 0,
