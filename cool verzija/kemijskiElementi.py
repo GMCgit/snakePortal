@@ -9,7 +9,7 @@ class kemEl:
         root.destroy()
         prozor=Tk()
         prozor.title('Kemijski elementi')
-        prozor.geometry('300x300')
+        prozor.geometry('350x300')
         prozor.config(background='cyan')
         prozor.resizable(False, False)
         variable1=IntVar()
@@ -90,3 +90,4 @@ class kemEl:
         
         prozor.mainloop()
         self.sI = score[0]
+a=kemEl(Tk())
