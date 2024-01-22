@@ -4,6 +4,7 @@ from hi import window2
 from swfws import Swfws
 from pingpong import pingPong
 from kemijskiElementi import kemEl
+from hangman import Hangman
 
 root = Tk()
 class snakeGame:
@@ -82,12 +83,14 @@ class snakeGame:
                     if p.trans:
                         newWindow = 0
                         a = random.randint(0, 100)
-                        if a < 1:
+                        if a < 25:
                             newWindow = pingPong(self.root)
-                        elif a<2:
+                        elif a<50:
                             newWindow = Swfws(self.root)
-                        else:
+                        elif a<76:
                             newWindow = kemEl(self.root)
+                        else:
+                            newWindow= Hangman(self.root)
                         direction = 'down'
                         a = snakeGame(Tk(), newWindow.sI)
                 if x == p.x1 and y == p.y1:
